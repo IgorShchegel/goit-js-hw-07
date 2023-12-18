@@ -25,18 +25,16 @@ const images = [
   },
 ];
 
-const galeriImages = document.querySelector('.gallery');
+const galleriImages = document.querySelector(".gallery");
 
-const imagesArr = images.map(({ url, alt }) => {
-  const listEl = document.createElement('li');
-  const imageEl = document.createElement('img');
+const galleryItems = images.map(({ url, alt }) => {
+  const listEl = document.createElement("li");
+  const imageEl = document.createElement("img");
   imageEl.src = url;
   imageEl.alt = alt;
-  imageEl.width = 360;
-  imageEl.height =300;
-  listEl.append(imageEl)
+  imageEl.classList.add("image-class");
+  listEl.append(imageEl);
   return listEl;
 });
 
-galeriImages.append(...imagesArr);
-
+galleriImages.append(...galleryItems);

@@ -1,10 +1,11 @@
-const userName = document.querySelector("#name-input");
-const writeName = document.querySelector("#name-output");
+const nameInput = document.querySelector("#name-input");
+const nameOutput = document.querySelector("#name-output");
 
-userName.addEventListener("input", (e) => {
-  if (e.target.value.trim() === "") {
-    writeName.textContent = "Anonymous";
+nameInput.addEventListener("input", (e) => {
+  const inputText = e.target.value.trim();
+  if (inputText === "") {
+    nameOutput.textContent = "Anonymous";
   } else {
-    writeName.textContent = e.target.value.trim();
+    nameOutput.textContent = inputText;
   }
 });
